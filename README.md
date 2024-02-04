@@ -37,7 +37,7 @@ Replace `"your_wifi_ssid"` and `"your_wifi_password"` with your actual WiFi cred
 
 ## Running the Code
 
-Copy and paste the provided `install.py` and `server.py` code into your Thonny IDE files, save them, and then run.
+Copy and paste the provided `install.py` and `server.py` code into your Thonny IDE files, save them, and then run install.py before running server.py.
 
 Note: If the LED does not light up when the Pi Pico is connected to WiFi, please check your internet connection and make sure that the Raspberry Pi Pico can communicate with the internet.
 
@@ -103,6 +103,7 @@ For more information, please refer to the following links:
 
 1. MicroPython Documentation: [https://docs.micropython.org/en/latest/](https://docs.micropython.org/en/latest/)
 2. Thonny Documentation: [https://thonny.org/help/](https://thonny.org/help/)
+3. Phew Documentation: [https://github.com/pimoroni/phew](https://github.com/pimoroni/phew)
 
-In case you encounter issues or need further assistance, please refer to the documentation first. If the issue persists, contact the project supervisor for help.
+In case you encounter issues or need further assistance, please refer to the documentation first.
 
