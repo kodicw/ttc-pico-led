@@ -1,4 +1,4 @@
-# MicroPython Project for Teen Tech Center at OMSI
+I'm# MicroPython Project for Teen Tech Center at OMSI
 
 This project involves the use of the Pico Pi board and the Thonny Integrated Development Environment. Please follow the subsequent instructions properly and carefully to successfully set up your project environment.
 
@@ -44,7 +44,8 @@ Note: If the LED does not light up when the Pi Pico is connected to WiFi, please
  This Python code is utilizing a number of modules to connect to a Wi-Fi and 
   deliver a server that can toggle an LED on or off over the internet.        
                                                                               
-  The first couple of lines of the code are importing necessary modules.      
+  The first couple of lines of the code are importing necessary modules.  
+    
 ```python                                                                             from secret import ssid, password                                         from phew import server, connect_to_wifi, get_ip_address
 from machine import Pin                                                   
 ```                                                                              
@@ -55,7 +56,8 @@ from machine import Pin
   •  machine  module is used to interact with hardware components. Here, it's 
   used to control an LED.                                                     
                                                                               
-  Next, an LED object is defined which is set to output mode.                 
+  Next, an LED object is defined which is set to output mode.               
+  
 ```python                                                                              led = Pin("LED", Pin.OUT)                                                 
 ```                                                                              
   The LED is referred by its name ("LED"). The argument  Pin.OUT  means that  
@@ -69,11 +71,13 @@ from machine import Pin
 ip = get_ip_address()                                                     
 ```                                                                              
   Now that the Wi-Fi connection is established, routes are set for the server:
+
 ```python                                                                              @server.route("/led", methods=["GET"])                                    
 def led_toggle(request):                                                  
     led.toggle()                                                          
     return f"{led.value()}"                                               
-```                                                                              
+```                           
+                                                   
   This function responds to GET requests to "/led" path and toggles the LED.  
   It returns a string representing the current state of LED.  led.toggle()  is
   a function to change the state of the LED from ON to OFF or from OFF to ON. 
