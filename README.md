@@ -45,11 +45,9 @@ Note: If the LED does not light up when the Pi Pico is connected to WiFi, please
   deliver a server that can toggle an LED on or off over the internet.        
                                                                               
   The first couple of lines of the code are importing necessary modules.      
-                                                                              
-    from secret import ssid, password                                         
-    from phew import server, connect_to_wifi, get_ip_address                  
-    from machine import Pin                                                   
-                                                                              
+```python                                                                             from secret import ssid, password                                         from phew import server, connect_to_wifi, get_ip_address
+from machine import Pin                                                   
+```                                                                              
   •  secret  module contains the network's SSID and password, which are       
   required for Wi-Fi connection.                                              
   •  phew  module provides a lightweight Python HTTP server, as well as two   
@@ -58,9 +56,8 @@ Note: If the LED does not light up when the Pi Pico is connected to WiFi, please
   used to control an LED.                                                     
                                                                               
   Next, an LED object is defined which is set to output mode.                 
-                                                                              
-    led = Pin("LED", Pin.OUT)                                                 
-                                                                              
+```python                                                                              led = Pin("LED", Pin.OUT)                                                 
+```                                                                              
   The LED is referred by its name ("LED"). The argument  Pin.OUT  means that  
   the pin setting is defined to output mode which means it can output power to
   other devices.                                                              
@@ -68,17 +65,15 @@ Note: If the LED does not light up when the Pi Pico is connected to WiFi, please
   Then, the functions  connect_to_wifi  and  get_ip_address  are called by    
   using the SSID and password from  secret  module. This code will establish a
   Wi-Fi connection.                                                           
-                                                                              
-    connect_to_wifi(ssid, password)                                           
-    ip = get_ip_address()                                                     
-                                                                              
+```python                                                                              connect_to_wifi(ssid, password)                                           
+ip = get_ip_address()                                                     
+```                                                                              
   Now that the Wi-Fi connection is established, routes are set for the server:
-                                                                              
-    @server.route("/led", methods=["GET"])                                    
-    def led_toggle(request):                                                  
-        led.toggle()                                                          
-        return f"{led.value()}"                                               
-                                                                              
+```python                                                                              @server.route("/led", methods=["GET"])                                    
+def led_toggle(request):                                                  
+    led.toggle()                                                          
+    return f"{led.value()}"                                               
+```                                                                              
   This function responds to GET requests to "/led" path and toggles the LED.  
   It returns a string representing the current state of LED.  led.toggle()  is
   a function to change the state of the LED from ON to OFF or from OFF to ON. 
@@ -86,17 +81,16 @@ Note: If the LED does not light up when the Pi Pico is connected to WiFi, please
                                                                               
   This function catches all requests to paths other than "/led" and returns a 
   404 error:                                                                  
-                                                                              
-    @server.catchall()                                                        
-    def catchall(request):                                                    
-        return "Not found", 404                                               
-                                                                              
+```python                                                                             @server.catchall()                                                        
+def catchall(request):                                                    
+    return "Not found", 404                                               
+```                                                                              
   Finally, the server is started with the  server.run()  command. The server  
   will now continuously listen for incoming requests until it is manually     
-  stopped.                                                                    
-                                                                              
-    server.run()
-
+  stopped.
+                                                                   
+```python                                                                             server.run()
+```
 ## Documentation
 
 For more information, please refer to the following links:
