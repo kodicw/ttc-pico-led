@@ -46,7 +46,9 @@ Note: If the LED does not light up when the Pi Pico is connected to WiFi, please
                                                                               
   The first couple of lines of the code are importing necessary modules.  
     
-```python                                                                             from secret import ssid, password                                         from phew import server, connect_to_wifi, get_ip_address
+```python                                                                             
+from secret import ssid, password                                         
+from phew import server, connect_to_wifi, get_ip_address
 from machine import Pin                                                   
 ```                                                                              
   •  secret  module contains the network's SSID and password, which are       
@@ -58,7 +60,8 @@ from machine import Pin
                                                                               
   Next, an LED object is defined which is set to output mode.               
   
-```python                                                                              led = Pin("LED", Pin.OUT)                                                 
+```python
+led = Pin("LED", Pin.OUT) 
 ```                                                                              
   The LED is referred by its name ("LED"). The argument  Pin.OUT  means that  
   the pin setting is defined to output mode which means it can output power to
@@ -67,12 +70,14 @@ from machine import Pin
   Then, the functions  connect_to_wifi  and  get_ip_address  are called by    
   using the SSID and password from  secret  module. This code will establish a
   Wi-Fi connection.                                                           
-```python                                                                              connect_to_wifi(ssid, password)                                           
+```python
+connect_to_wifi(ssid, password)                                           
 ip = get_ip_address()                                                     
 ```                                                                              
   Now that the Wi-Fi connection is established, routes are set for the server:
 
-```python                                                                              @server.route("/led", methods=["GET"])                                    
+```python
+@server.route("/led", methods=["GET"])                                    
 def led_toggle(request):                                                  
     led.toggle()                                                          
     return f"{led.value()}"                                               
@@ -85,7 +90,9 @@ def led_toggle(request):
                                                                               
   This function catches all requests to paths other than "/led" and returns a 
   404 error:                                                                  
-```python                                                                             @server.catchall()                                                        
+```python
+
+@server.catchall()
 def catchall(request):                                                    
     return "Not found", 404                                               
 ```                                                                              
@@ -93,7 +100,8 @@ def catchall(request):
   will now continuously listen for incoming requests until it is manually     
   stopped.
                                                                    
-```python                                                                             server.run()
+```python
+server.run()
 ```
 ## Documentation
 
