@@ -1,4 +1,4 @@
-I'm# MicroPython Project for Teen Tech Center at OMSI
+# MicroPython Project for Teen Tech Center at OMSI
 
 This project involves the use of the Pico Pi board and the Thonny Integrated Development Environment. Please follow the subsequent instructions properly and carefully to successfully set up your project environment.
 
