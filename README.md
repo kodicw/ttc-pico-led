@@ -110,6 +110,8 @@ For more information, please refer to the following links:
 1. MicroPython Documentation: [https://docs.micropython.org/en/latest/](https://docs.micropython.org/en/latest/)
 2. Thonny Documentation: [https://thonny.org/help/](https://thonny.org/help/)
 3. Phew Documentation: [https://github.com/pimoroni/phew](https://github.com/pimoroni/phew)
+4. Pico CSS: [https://github.com/kodicw/ttc-pico-led](https://github.com/kodicw/ttc-pico-led)
+5. HTMX: [https://htmx.org](https://htmx.org)
 
 In case you encounter issues or need further assistance, please refer to the documentation first.
 
